@@ -1,0 +1,11 @@
+
+<section>
+<h3 *ngIf="products">Listado de Productos ({{products.length}})</h3>
+<article class="card-contain">
+  <div *ngFor = "let product of products" class = "card">
+      <img src="{{product.image}}" alt="{{product.name}}">
+      <p>{{product.description}}</p>
+      <h3>{{product.price}} €</h3>
+  </div>
+</article>
+</section>

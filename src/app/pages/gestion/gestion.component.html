@@ -1,0 +1,53 @@
+<section class="body">
+
+<div class="contain">
+
+<form class = "form" (ngSubmit)="onSubmit()"[formGroup]="productForm">
+  <div class = "form__item">
+    <label for="name"> Nombre del producto:</label>
+      <input class = "input" name="name" type="text" formControlName="name" value = "A">
+      <app-form-errors *ngIf="submitted" [errors]="productForm.controls['name'].errors"></app-form-errors>
+
+  </div>
+  <div class = "form__item">
+      <label for="price">Precio: </label>
+      <input class = "input" name ="price" type="text" formControlName="price" >
+      <app-form-errors *ngIf="submitted" [errors]="productForm.controls['price'].errors"></app-form-errors>
+
+  </div>
+  <div class = "form__item">
+    <label for="description"> Descripción: </label>
+      <textarea class = "input" name ="description" formControlName="description" cols="30" rows="3"></textarea>
+      <app-form-errors *ngIf="submitted" [errors]="productForm.controls['description'].errors"></app-form-errors>
+
+  </div>
+  <div class = "form__item">
+    <label for="stars"> Estrellas: </label>
+      <input class = "input" name = "stars" type="text" formControlName="stars">
+      <app-form-errors *ngIf="submitted" [errors]="productForm.controls['stars'].errors"></app-form-errors>
+  </div>
+ <div class = "form__item">
+  <label for="img"> imagen: </label>
+    <input  class = "input" name ="img" type="text" formControlName="image">
+    <app-form-errors *ngIf="submitted" [errors]="productForm.controls['image'].errors"></app-form-errors>
+
+ </div>
+  <div class = "form__item">
+    <input class = "submit" type="submit" value ="Guardar">
+  </div>
+
+
+  </form>
+
+  <div class="preview">
+    <h5>Preview del producto :</h5>
+    <div class="preview__item">
+    <img src="{{createdProduct.image}}" alt="">
+     <p>{{createdProduct.name}}</p>
+    <p>{{createdProduct.description}}</p>
+    <h3>{{createdProduct.price}} €</h3>
+  </div>
+  </div>
+</div>
+
+</section>
